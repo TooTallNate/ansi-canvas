@@ -67,8 +67,9 @@ function render () {
   var data = ctx.getImageData(0, 0, w, h).data;
 
   for (var i = 0, l = data.length; i < l; i += 4) {
+
     if ((i/4|0) % w === 0) {
-      // end of the row
+      // beginning of the row
       cursor.bg.reset();
       cursor.write('\n');
     }
