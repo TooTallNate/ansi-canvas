@@ -36,9 +36,6 @@ function term (opts) {
   // cached "context"
   canvas.renderCtx = canvas.getContext('2d');
 
-  // create `ansi()` cursor
-  canvas.cursor = ansi(stream);
-
   return canvas;
 }
 
@@ -49,12 +46,14 @@ function term (opts) {
  */
 
 function render () {
+  var cursor = ansi(this.stream);
+  cursor.write('\n');
 
   // erase everything on the screen
-  this.cursor.eraseData(2);
+  cursor.eraseData(2);
 
   // go to the top left origin (1-indexed, not 0...)
-  this.cursor.goto(1, 1);
+  cursor.goto(1, 1);
 
   // render the current <canvas> contents to the TTY
   var ctx = this.renderCtx;
@@ -62,7 +61,6 @@ function render () {
   var h = this.height;
   var alphaThreshold = 0;
   var pixel = this.pixel;
-  var cursor = this.cursor;
 
   var data = ctx.getImageData(0, 0, w, h).data;
 
