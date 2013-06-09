@@ -36,6 +36,12 @@ function term (opts) {
   // cached "context"
   canvas.renderCtx = canvas.getContext('2d');
 
+  // handle the "resize" event
+  stream.on('resize', function () {
+    canvas.width = stream.columns / pixelWidth;
+    canvas.height = stream.rows / pixelHeight;
+  });
+
   return canvas;
 }
 
@@ -47,7 +53,6 @@ function term (opts) {
 
 function render () {
   var cursor = ansi(this.stream);
-  cursor.write('\n');
 
   // erase everything on the screen
   cursor.eraseData(2);
