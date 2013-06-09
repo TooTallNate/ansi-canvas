@@ -1,0 +1,25 @@
+{
+  "name": "term-canvas",
+  "version": "0.0.0",
+  "description": "Render a <canvas> node to your terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/term-canvas.js"
+  },
+  "keywords": [
+    "terminal"
+  ],
+  "dependencies": {
+    "ansi": "~0.1.2",
+    "canvas": "~1.0.3"
+  },
+  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TooTallNate/term-canvas.js/issues"
+  }
+}
