@@ -23,15 +23,15 @@ module.exports = term;
 function term (opts) {
   if (!opts) opts = {};
   var stream = opts.stream || process.stdout;
-  var pixel = opts.pixel || '  ';
-  var pixelHeight = 1;
-  var pixelWidth = pixel.length;
+  var small = !!opts.small;
+  var pixelHeight = small ? 0.5 : 1;
+  var pixelWidth = small ? 1 : 2;
 
   // create <canvas> instance
   var canvas = new Canvas(stream.columns / pixelWidth, stream.rows / pixelHeight);
   canvas.render = render;
   canvas.stream = stream;
-  canvas.pixel = pixel;
+  canvas.small = small;
 
   // cached "context"
   canvas.renderCtx = canvas.getContext('2d');
@@ -54,6 +54,9 @@ function term (opts) {
 function render () {
   var cursor = ansi(this.stream);
 
+  // retain calls in memory until `flush()` call
+  cursor.buffer();
+
   // erase everything on the screen
   cursor.eraseData(2);
 
@@ -62,32 +65,90 @@ function render () {
 
   // render the current <canvas> contents to the TTY
   var ctx = this.renderCtx;
+  var small = this.small;
   var w = this.width;
   var h = this.height;
   var alphaThreshold = 0;
-  var pixel = this.pixel;
 
   var data = ctx.getImageData(0, 0, w, h).data;
+  var r, g, b, alpha;
+  var topBlank, bottomBlank;
+  var i = 0;
 
-  for (var i = 0, l = data.length; i < l; i += 4) {
+  for (var y = 0; y < h; y++) {
 
-    if ((i/4|0) % w === 0) {
-      // beginning of the row
-      cursor.bg.reset();
-      cursor.write('\n');
+    // beginning of the row
+    cursor.bg.reset();
+    cursor.write('\n');
+
+    for (var x = 0; x < w; x++) {
+
+      // in `small` mode, we have to render 2 rows at a time, where the top row
+      // is the background color, and the bottom row is the foreground color
+      i = ((y * w) + x) * 4;
+
+      // top row
+      r = data[i];
+      g = data[i+1];
+      b = data[i+2];
+      alpha = data[i+3];
+
+      if (alpha > alphaThreshold) {
+        cursor.bg.rgb(r, g, b);
+        topBlank = false;
+      } else {
+        cursor.bg.reset();
+        topBlank = true;
+      }
+
+      if (small) {
+        // bottom row
+
+        // go to the next row
+        i = (((y + 1) * w) + x) * 4;
+
+        r = data[i];
+        g = data[i+1];
+        b = data[i+2];
+        alpha = data[i+3];
+
+        if (alpha > alphaThreshold) {
+          cursor.fg.rgb(r, g, b);
+          bottomBlank = false;
+        } else {
+          cursor.fg.reset();
+          bottomBlank = true;
+        }
+      }
+
+      if (small && bottomBlank && !topBlank) {
+        // swapping fg and bg for this pixel since we're gonna use a "top
+        // half" instead of the usual "bottom half"
+        i = ((y * w) + x) * 4;
+
+        // top row
+        r = data[i];
+        g = data[i+1];
+        b = data[i+2];
+
+        cursor.bg.reset();
+        cursor.fg.rgb(r, g, b);
+      }
+
+      // write the pixel
+      if (!small) {
+        cursor.write('  ');
+      } else if (topBlank && bottomBlank) {
+        cursor.write(' ');
+      } else if (bottomBlank) {
+        cursor.write('▀');
+      } else {
+        cursor.write('▄');
+      }
     }
 
-    var r = data[i];
-    var g = data[i+1];
-    var b = data[i+2];
-    var alpha = data[i+3];
-
-    if (alpha > alphaThreshold) {
-      cursor.bg.rgb(r, g, b);
-    } else {
-      cursor.bg.reset();
-    }
-
-    cursor.write(pixel);
+    if (small) y++;
   }
+
+  cursor.flush();
 }
