@@ -1,5 +1,5 @@
-node-term-canvas
-================
+ansi-canvas
+===========
 ### Render a &lt;canvas&gt; node to your terminal
 
 ![](http://i.cloudup.com/HAFymb_oa1.png)

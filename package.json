@@ -1,5 +1,5 @@
 {
-  "name": "term-canvas",
+  "name": "ansi-canvas",
   "version": "0.0.0",
   "description": "Render a <canvas> node to your terminal",
   "main": "index.js",
@@ -8,9 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TooTallNate/term-canvas.js"
+    "url": "git://github.com/TooTallNate/ansi-canvas.js"
   },
   "keywords": [
+    "ansi",
+    "canavs",
     "terminal"
   ],
   "dependencies": {
