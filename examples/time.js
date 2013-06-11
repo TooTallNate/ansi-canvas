@@ -1,5 +1,5 @@
 
-var tc = require('./');
+var tc = require('../');
 
 // create terminal <canvas>
 var canvas = tc({ small: true });
