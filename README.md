@@ -1,6 +1,6 @@
 node-term-canvas
 ================
-### Render a &lt;canvas&rt; node to your terminal
+### Render a &lt;canvas&gt; node to your terminal
 
 ![](http://i.cloudup.com/0fNvsT.png)
 
