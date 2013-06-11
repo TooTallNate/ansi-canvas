@@ -4,6 +4,12 @@ ansi-canvas
 
 ![](http://i.cloudup.com/HAFymb_oa1.png)
 
+This module provides a `<canvas>` object backed by node-canvas, with its `width`
+and `height` properties automatically set to the proper size of the terminal
+window.
+
+The result is that you can use the [HTML Canvas API][canvas api] to render
+directly to your terminal.
 
 Installation
 ------------
@@ -11,7 +17,7 @@ Installation
 Install with `npm`:
 
 ``` bash
-$ npm install _____
+$ npm install ansi-canvas
 ```
 
 
@@ -47,3 +53,6 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+[canvas api]: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html
