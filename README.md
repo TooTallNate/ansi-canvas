@@ -2,7 +2,7 @@ node-term-canvas
 ================
 ### Render a &lt;canvas&gt; node to your terminal
 
-![](http://i.cloudup.com/0fNvsT.png)
+![](http://i.cloudup.com/HAFymb_oa1.png)
 
 
 Installation
