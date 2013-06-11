@@ -20,7 +20,6 @@ function rect(x,y,w,h) {
   ctx.fill();
 }
 
- 
 function clear() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
