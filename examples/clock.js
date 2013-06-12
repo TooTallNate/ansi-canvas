@@ -4,7 +4,7 @@
  */
 
 var ac = require('../');
-var term = ac({ small: true });
+var term = ac();
 
 var Canvas = require('canvas');
 var canvas = new Canvas(320, 320);

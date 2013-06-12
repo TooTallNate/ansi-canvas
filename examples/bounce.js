@@ -25,8 +25,7 @@ function clear() {
 }
 
 function init() {
-  canvas = tc({ small: true });
-  //canvas = tc();
+  canvas = tc();
   ctx = canvas.getContext("2d");
   return setInterval(draw, 1000 / 60);
 }

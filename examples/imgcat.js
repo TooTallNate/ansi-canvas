@@ -3,7 +3,7 @@ var tc = require('../');
 var Canvas = require('canvas');
 
 // create terminal <canvas>
-var canvas = tc({ small: true });
+var canvas = tc();
 var ctx = canvas.getContext('2d');
 
 var screenWidth = canvas.width;

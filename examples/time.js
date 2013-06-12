@@ -2,7 +2,7 @@
 var tc = require('../');
 
 // create terminal <canvas>
-var canvas = tc({ small: true });
+var canvas = tc();
 var ctx = canvas.getContext('2d');
 
 require('ansi')(process.stdout).hide();

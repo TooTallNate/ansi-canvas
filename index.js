@@ -23,7 +23,7 @@ module.exports = term;
 function term (opts) {
   if (!opts) opts = {};
   var stream = opts.stream || process.stdout;
-  var small = !!opts.small;
+  var small = null == opts.small ? true : !!opts.small;
   var pixelHeight = small ? 0.5 : 1;
   var pixelWidth = small ? 1 : 2;
 
