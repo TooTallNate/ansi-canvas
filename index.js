@@ -150,5 +150,8 @@ function render () {
     if (small) y++;
   }
 
+  cursor.fg.reset();
+  cursor.bg.reset();
+
   cursor.flush();
 }
