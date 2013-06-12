@@ -55,10 +55,13 @@ Outputs something like:
 Set the Font Size Really Small!
 -------------------------------
 
-And then you get really high resolution, and then you could... like... render SNES
-directly in your Terminal!!!
+And then you get really high resolution, and then you could do something crazy…
+like… render SNES directly in your Terminal!!!
 
 ![](http://i.cloudup.com/3kJGyG-qAS.png)
+
+_(note: this is just an image. if you were to actually implement SNES in the
+Terminal at a reasonable framerate and resolution you'd be god-like)_
 
 
 License
