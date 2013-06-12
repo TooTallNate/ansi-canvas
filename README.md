@@ -52,6 +52,15 @@ Outputs something like:
 ![](http://i.cloudup.com/5tGgXjcRWw.png)
 
 
+Set the Font Size Really Small!
+-------------------------------
+
+And then you get really high resolution, and then you could... like... render SNES
+directly in your Terminal!!!
+
+![](http://i.cloudup.com/3kJGyG-qAS.png)
+
+
 License
 -------
 
