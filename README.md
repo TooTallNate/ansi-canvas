@@ -61,7 +61,8 @@ like… render SNES directly in your Terminal!!!
 ![](http://i.cloudup.com/3kJGyG-qAS.png)
 
 _(note: this is just an image. if you were to actually implement SNES in the
-Terminal at a reasonable framerate and resolution you'd be god-like)_
+Terminal at a reasonable framerate and resolution you'd be god-like, but please
+let me know if you do it!)_
 
 
 License
