@@ -2,7 +2,7 @@ ansi-canvas
 ===========
 ### Render a &lt;canvas&gt; node to your terminal
 
-![](http://i.cloudup.com/HAFymb_oa1.png)
+![](http://i.cloudup.com/xRdnRVg8zz.png)
 
 This module provides a `<canvas>` object backed by [node-canvas][], with its
 `width` and `height` properties automatically set to the proper size of the
