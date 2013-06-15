@@ -9,7 +9,7 @@ This module provides a `<canvas>` object backed by [node-canvas][], with its
 terminal window.
 
 The result is that you can use the [HTML Canvas API][canvas api] to render
-directly to your terminal.
+directly to your terminal!
 
 Installation
 ------------
