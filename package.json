@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TooTallNate/ansi-canvas.js"
+    "url": "git://github.com/TooTallNate/ansi-canvas"
   },
   "keywords": [
     "ansi",
@@ -22,6 +22,6 @@
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TooTallNate/term-canvas.js/issues"
+    "url": "https://github.com/TooTallNate/term-canvas/issues"
   }
 }
