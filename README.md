@@ -2,7 +2,7 @@ ansi-canvas
 ===========
 ### Render a &lt;canvas&gt; node to your terminal
 
-![](http://i.cloudup.com/IjvPIHXwh7.gif)
+![](https://i.cloudup.com/IjvPIHXwh7.gif)
 
 This module provides a `<canvas>` object backed by [node-canvas][], with its
 `width` and `height` properties automatically set to the proper size of the
@@ -49,7 +49,7 @@ canvas.render();
 
 Outputs something like:
 
-![](http://i.cloudup.com/5tGgXjcRWw.png)
+![](https://i.cloudup.com/5tGgXjcRWw.png)
 
 
 Set the Font Size Really Small!
@@ -58,7 +58,7 @@ Set the Font Size Really Small!
 And then you get really high resolution, and then you could do something crazy…
 like… render SNES directly in your Terminal!!!
 
-![](http://i.cloudup.com/3kJGyG-qAS.png)
+![](https://i.cloudup.com/3kJGyG-qAS.png)
 
 _(note: this is just an image. if you were to actually implement SNES in the
 Terminal at a reasonable framerate and resolution you'd be god-like, but please
