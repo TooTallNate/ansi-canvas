@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TooTallNate/ansi-canvas"
+    "url": "git://github.com/TooTallNate/ansi-canvas.git"
   },
   "keywords": [
     "ansi",
