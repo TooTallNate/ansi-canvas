@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "ansi": "~0.2.0",
-    "canvas": "~1.0.3"
+    "canvas": "~1.2.7"
   },
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
   "license": "MIT",
